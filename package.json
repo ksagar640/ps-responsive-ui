@@ -1,7 +1,6 @@
 {
   "name": "pricing-solution-asde-jul-frontend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +10,9 @@
     "url": "https://PSI-CampusProgram@dev.azure.com/PSI-CampusProgram/PSI-2021-ASDE-Batch/_git/Pricing-Solution-ASDE-Jul-Frontend"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "yarn": "^1.22.11"
+  }
 }
