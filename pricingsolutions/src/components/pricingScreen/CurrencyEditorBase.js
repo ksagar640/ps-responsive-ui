@@ -1,6 +1,6 @@
 import * as PropTypes from 'prop-types';
 import Input from '@material-ui/core/Input';
-
+import React from "react"
   export const CurrencyEditorBase = ({ value, onValueChange, classes }) => {
     const handleChange = (event) => {
       const { value: targetValue } = event.target;

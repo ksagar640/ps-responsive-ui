@@ -67,7 +67,7 @@
   align-items: center;
 }
 
-span {
+#spanId {
   margin-left: 16px;
 }
 .button {

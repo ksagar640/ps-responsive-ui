@@ -1,10 +1,9 @@
 import { SET_PREF, API, API_ERROR } from './types';
-
-export function setUserPref(data) {
-  console.log('Inside set User Pref',data);
+import {addUserPreferenceUrl} from './apiUrlEndPoints';
+export function setUserPref(data) { 
   return apiAction({
-    //url: 'https://func-price-frontapi-intg-01.azurewebsites.net/api/preference-save?code=wNq9pj4yR8VI2nS6phAQSQKyWOHioaNpfW2HzIuztExqyjBkVXGVgA==&clientId=apim-apim-price-intg-01', // Mocked Backend Data.
-    url : "https://apim-price-intg-01.azure-api.net/api/preference-save", 
+  
+    url : addUserPreferenceUrl,
     data: data,
     onSuccess: setPreference,
     onFailure: setPreferenceError,

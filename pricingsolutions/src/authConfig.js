@@ -11,9 +11,9 @@ export const msalConfig = {
     auth: {
         clientId: ourClientId,
         authority: ourAuthority,
-        // redirectUri: "https://ase-pricingsolution-dev-frontend-001.azurewebsites.net"
+        // redirectUri: "https://ase-price-frontend-intg-01.azurewebsites.net",
         navigateToLoginRequestUrl: true,
-        redirectUri : ourRedirectUri
+        //redirectUri : ourRedirectUri
     },
     cache: {
         cacheLocation: "sessionStorage", 

@@ -5,8 +5,10 @@ export default function setDefaultpreferences() {
       sorting : [{ColumnName : "marketQuoteId" , sortingDirection : "asc"}],
       currentPage : 0,
       pageSize : 5,
-      MarketPrice : [0,200],
-      MarketHigh : [0,400],
+      MarketPrice : [0,100],
+      MarketHigh : [0,100],
+      MarketOpen : [0,100],
+      MarketLow : [0,100],
       groups : []
     }
 };  

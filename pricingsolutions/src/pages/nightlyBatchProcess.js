@@ -1,22 +1,46 @@
 import React, { Fragment } from 'react';
-import Grid from '../components/NightlyBatch/Grid'
+import NightlyBatchGrid from '../components/NightlyBatch/NightlyBatchGrid'
 import '../components/NightlyBatch/Grid.css'
+import Navbar from '../components/NavBar/Navbar';
+import LoginPage from "../components/loginPage/LoginPage";
+import {useHistory} from 'react-router-dom';
 
-function nightlyBatchProcess() {
-  return (
-<Fragment>
-  <h2 className = 'h3'> Nightly Batch Process </h2>
-<div className='home'>
-  <div> 
-      <Grid />
-    </div> 
-        </div>  
-</Fragment>
-     
-  );
+function NightlyBatchProcess() 
+{
+  const history=useHistory();
+  var Email= localStorage.getItem("Email");
+  var UserRole= localStorage.getItem("userRole");
+
+  if(Email == null)
+ {
+   history.push("/");
+return(<></>);
 }
+            if(Email!=null && UserRole != "admin")
+            {
+                history.push("/pricingView");
+        return(<></>);
 
-export default nightlyBatchProcess;
+            }
+  
+  
+  return (
+
+  
+<div data-testid ="nightlyBatchTest">
+  <div data-testid ="navDataTest">
+       <Navbar/>
+       </div>
+       <h3 className = 'h3' data-testid="headingTest"> Nightly Batch Process </h3>
+    <div className='home' data-testid="gridDataTest">
+   
+      <NightlyBatchGrid />
+    </div>
+
+</div>
+          );}
+
+export default NightlyBatchProcess;
 
 
 

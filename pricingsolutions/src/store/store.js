@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer from '../components/pricingScreen/reducers/pricingSolutionReducer';
+import pricingAppReducer from '../components/pricingScreen/reducers/rootReducer';
 import apiMiddleware from '../components/pricingScreen/Middleware/dbApiMiddleware'
-
-const store = createStore(rootReducer, applyMiddleware(apiMiddleware));
-window.store = store;
+const store = createStore(pricingAppReducer, applyMiddleware(apiMiddleware));
+console.log(store.getState());
 export default store;

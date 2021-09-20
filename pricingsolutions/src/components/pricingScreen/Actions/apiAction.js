@@ -1,4 +1,4 @@
-import {  API_END, API_ERROR, API_START } from './types';
+import {  API_END, API_ERROR } from './types';
 
 export const apiEnd = label => ({
   type: API_END,

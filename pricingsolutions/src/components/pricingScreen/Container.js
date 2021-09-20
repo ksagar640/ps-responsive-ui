@@ -8,14 +8,19 @@ import Header from '../header/Header';
 
 class WithCustomMiddleware extends Component {
   componentDidMount() {
+    const email = localStorage.getItem("Email");
     this.props.getAllMarketprices();
-    this.props.getUserPreference(this.props.email);
+    this.props.getUserPreference(email);
+    
+   
   }
+
   render = (props) => (
-      <div>
-      {/* <Header userRole = {props.userRole}/> */}
+
+    
+      <div data-testid="containerDiv">
       <Header/>
-      <GridView 
+      <GridView
       data = {this.props.data}
       preference = {this.props.preference}
       email = {this.props.email}
@@ -30,12 +35,11 @@ class WithCustomMiddleware extends Component {
 
 const mapStateToProps = function (state) {
   return {
-  data : state.rows,
-  preference : state.preference,
-  email : state.email,
-  loadingStatus : state.loadingStatus,
-  ErrorStatus : state.ErrorStatus,
-  isHavingPreference : state.isHavingPreference
+  data : state.fetchApi.rows,
+  preference : state.fetchApi.preference,
+  loadingStatus : state.apiStatus.loadingStatus,
+  ErrorStatus : state.apiStatus.ErrorStatus,
+  isHavingPreference : state.fetchApi.isHavingPreference
   }
 };
 

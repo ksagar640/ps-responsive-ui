@@ -7,6 +7,7 @@ import {
   createStyles,
   IconButton,
 } from "@material-ui/core";
+import React from 'react';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -18,15 +19,14 @@ const useStyles = makeStyles((theme) =>
       float: "left",
     },
     appbar: {
-      background: "pink",
-      color: "black",
+      background: "#060b26",
+      color: "white",
     },
     title: {
       flexGrow: 1,
       textAlign: "center",
       fontFamily: "monospace",
       marginLeft: "-90px",
-      // letterSpacing: 3,
       fontSize: 35,
       
     },
@@ -39,7 +39,7 @@ const Heading = (props) => {
     <div className={classes.root}>
       <AppBar position="static" className={classes.appbar}>
         <Toolbar>
-          <img
+          <img 
             src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/Publicis_logo.svg/1200px-Publicis_logo.svg.png"
             alt="logo"
             className={classes.logo}

@@ -11,8 +11,8 @@ function PricingScreen() {
     <>
       <Router>
          <Header /> 
-<Route path='/' component={PricingScreen} />
-<Route path='/apiConfig' component={AdminScreen} />
+          <Route path='/' component={PricingScreen} />
+          <Route path='/apiConfig' component={AdminScreen} />
       </Router>
     </>
   );

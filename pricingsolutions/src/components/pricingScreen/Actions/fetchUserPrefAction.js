@@ -1,34 +1,33 @@
 import { FETCH_PREF, API, API_ERROR } from './types';
-
+import { fetchUserPreferenceUrl } from './apiUrlEndPoints';
 export function fetchUserPref(data) {
-  let query = '?email='+data;
+  let query = '?email=' + data;
   return apiAction({
-    
-   // url: "https://func-price-frontapi-devl-01.azurewebsites.net/api/getPref?code=7a/wg04t3eReDx1oSIut9eT2BWbLMsiUVmL2OtgYmwAhEoYTnLPjkQ==&clientId=apim-apim-price-frontapi-thirdapi-devl-01"+query, // Mocked Backend Data.
-    url : "https://apim-price-intg-01.azure-api.net/api/preference-get"+query, 
-    data : null,
+
+    url: fetchUserPreferenceUrl + query,
+    data: null,
     onSuccess: fetchPreference,
     onFailure: fetchUserPrefError,
     label: FETCH_PREF
   });
 }
 
-export function fetchUserPrefError(error)
-{
-  console.log("error in fetching user pref" , error);
+export function fetchUserPrefError(error) {
+  console.log("error in fetching user pref", error);
   return {
-    type : API_ERROR,
-    payload : FETCH_PREF
+    type: API_ERROR,
+    payload: FETCH_PREF
   }
 }
 
 export function fetchPreference(data) {
-
+  localStorage.setItem("Id", data.id);
   let obj = {
     type: FETCH_PREF,
     payload: {
+      id : data.id,
       email : data.emailId,
-      preference : JSON.parse(data.userPreference)
+      preference : data.gridConfig!=="" ? JSON.parse(data.gridConfig) : {}
     } 
   };
   return obj;
@@ -36,10 +35,10 @@ export function fetchPreference(data) {
 
 function apiAction({
   url,
-  method = 'GET', 
+  method = 'GET',
   data,
-  onSuccess = () => {},
-  onFailure = () => {},
+  onSuccess = () => { },
+  onFailure = () => { },
   label
 }) {
   return {
