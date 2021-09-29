@@ -1,1 +1,0 @@
-export const userNotFoundText = "You are not a user";
