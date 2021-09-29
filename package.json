@@ -1,8 +1,8 @@
 {
-  "name": "carolina-react-admin-dashboard-free",
+  "name": "carolina-react-admin-dashboard-material-ui-free",
   "version": "1.0.0",
   "title": "Carolina React Admin Dashboard with Material-UI Free",
-  "homepage": "https://demo.uifort.com/carolina-react-admin-dashboard-free",
+  "homepage": "https://demo.uifort.com/carolina-react-admin-dashboard-material-ui-free",
   "description": "This free React admin template is powered by Material-UI components framework and features a clean and fresh design following Google&#39;s Material Design specifications.",
   "author": {
     "name": "UiFort.com",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/uifort/carolina-react-admin-dashboard-free"
+    "url": "https://github.com/uifort/carolina-react-admin-dashboard-material-ui-free"
   },
   "dependencies": {
     "redux": "4.0.5",
@@ -21,7 +21,7 @@
     "clsx": "1.1.0",
     "react-scripts": "3.4.0",
     "@material-ui/core": "4.9.2",
-    "@material-ui/lab": "4.0.0-alpha.43",
+    "@material-ui/lab": "4.0.0-alpha.42",
     "@material-ui/icons": "4.5.1",
     "framer-motion": "1.8.4",
     "react-apexcharts": "1.3.6",
@@ -39,7 +39,35 @@
     "pe7-icon": "1.0.4",
     "react-perfect-scrollbar": "1.5.8",
     "hamburgers": "1.1.3",
-    "react": "16.12.0"
+    "@azure/msal-browser": "^2.16.1",
+    "@azure/msal-react": "^1.0.1",
+    "@babel/runtime": "^7.15.4",
+    "@date-io/date-fns": "^1.3.13",
+    "@devexpress/dx-react-core": "^2.7.6",
+    "@devexpress/dx-react-grid": "^2.7.6",
+    "@devexpress/dx-react-grid-export": "^2.7.6",
+    "@devexpress/dx-react-grid-material-ui": "^2.7.6",
+    "@emotion/react": "11.4.1",
+    "@emotion/styled": "11.3.0",
+    "@material-ui/data-grid": "^4.0.0-alpha.37",
+    "@material-ui/pickers": "^3.3.10",
+    "@mui/icons-material": "^5.0.0-rc.0",
+    "@mui/material": "5.0.0-rc.0",
+    "@testing-library/dom": "^8.5.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.4",
+    "axios-mock-adapter": "^1.20.0",
+    "date-fns": "^2.0.0-beta.5",
+    "file-saver": "^2.0.5",
+    "jest-junit": "^12.2.0",
+    "react": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "redux-mock-store": "^1.5.4",
+    "rsuite": "^4.10.3",
+    "styled-components": "^5.3.1",
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -72,6 +100,51 @@
     "prettier-eslint": "9.0.1",
     "prettier-eslint-cli": "5.0.0",
     "node-sass": "4.13.1",
-    "sass-vars-to-js-loader": "2.1.1"
+    "sass-vars-to-js-loader": "2.1.1",
+    "@babel/plugin-syntax-jsx": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/react-hooks": "^7.0.2",
+    "jest-dom": "^4.0.0",
+    "jest-junit": "^12.2.0",
+    "jest-sonar": "^0.2.12",
+    "jest-sonar-reporter": "^2.0.0",
+    "jest-transform-stub": "^2.0.0",
+    "react-test-renderer": "^16.9.0",
+    "react-testing-library": "^8.0.1",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      "jest-sonar",
+      "jest-junit"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/components/loginbox/loginApiCall.js",
+      "src/hooks/useForm.js",
+      "src/pages/callApi.js",
+      "src/components/grid/azureService.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover",
+      "cobertura"
+    ],
+    "moduleNameMapper": {
+      "^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+    },
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+    }
+  },
+  "jest-junit": {
+    "suiteNameTemplate": "{filepath}",
+    "outputDirectory": ".",
+    "outputName": "junit.xml"
   }
 }

@@ -73,8 +73,8 @@ const Routes = () => {
             </div>
           }>
           <Switch>
-            <Redirect exact from="/" to="/LandingPage" />
-            <Route path={['/LandingPage']}>
+            {/* <Redirect exact from="/" to="/" /> */}
+            <Route path={['/']}>
               <PresentationLayout>
                 <Switch location={location} key={location.pathname}>
                   <motion.div
@@ -83,7 +83,7 @@ const Routes = () => {
                     exit="out"
                     variants={pageVariants}
                     transition={pageTransition}>
-                    <Route path="/LandingPage" component={LandingPage} />
+                    <Route path="/" component={LandingPage} />
                   </motion.div>
                 </Switch>
               </PresentationLayout>
